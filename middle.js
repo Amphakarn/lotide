@@ -21,22 +21,26 @@ const assertArraysEqual = function(arrA, arrB) {
   }
 };
 
-const middle = function(arr) {
-  /* Input = array
+const middle = function(arr) {  
+  let arrLen = arr.length;
+  if (arrLen <= 2) {
+    return [];
+  }
+
   let mid = [];
-  Check array length
-  If length > 2 then
-    Check if array length is even or odd number
-    If odd number then 
-      grab a single middle element
-      push the element in the mid array
-    End if
-    Else if even number then
-      grab the two middle elements
-      push the elements in the mid array
-    End else if
-  */
-  return mid
+  let midIndex;
+  if (arrLen % 2 === 1) {
+    midIndex = Math.floor(arrLen / 2);
+    mid.push(arr[midIndex]);
+  } else {    
+    midIndex = arrLen / 2;
+    mid.push(arr[midIndex - 1]);
+    mid.push(arr[midIndex]);
+  }
+  return mid;
 }
 
-console.log(middle([1,2,3]));
+assertArraysEqual(middle([1,2]), []);
+assertArraysEqual(middle([1,2,3,4,5]), [3]);
+assertArraysEqual(middle([1,2,3,4]), [2, 3]); 
+assertArraysEqual(middle(["A","B",null]), ["B", "C"]);
