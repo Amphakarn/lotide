@@ -44,15 +44,17 @@ const without = function(source, itemToRem) {
   End loop
   Return source
   */
-
+  let leftOver = [];
   for (let i in source) {
     for (let j in itemToRem) {
       if (itemToRem[j] === source[i]) {
-        source.splice(i, 1);
+        leftOver = source.filter(function(e) { // check with mentor
+        return e !== source[i];
+        });
       }
     }
   }
-  console.log(source);
+  console.log(leftOver);
 }
 
 /*assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
@@ -66,9 +68,9 @@ assertArraysEqual([1, 2, 3], [1, 2, 3]);
 assertArraysEqual([1, 2, "3"], [1, 2, 3]);
 assertArraysEqual([1, 2], [1, 2, 3]);*/
 
-// without([1, 2, 3], [1]) // => [2, 3]
-// without(["1", "2", "3"], [1, 2, "3"]) // => ["1", "2"]
-// without([], [1])
+without([1, 2, 3], [1]) // => [2, 3]
+without(["1", "2", "3"], [1, 2, "3"]) // => ["1", "2"]
+without([], [1])
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]);
