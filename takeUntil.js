@@ -24,16 +24,16 @@ const assertArraysEqual = function(arrA, arrB) {
 };
 
 const takeUntil = function(array, callback) {
-  const result = [];  
+  const result = [];
   for (let i of array) {
     if (callback(i) === false) {
       result.push(i);
     } else {
       break;
-    }    
+    }
   }
   return result;
-}
+};
 
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
