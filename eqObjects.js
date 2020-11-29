@@ -1,7 +1,7 @@
 // Pair programming with Ryan MacFarlane
 
 // compare 2 strings and console.log results
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   const pass = 0x2705;
   const fail = 0x1F6D1;
   if (actual === expected) {
@@ -12,7 +12,7 @@ const assertEqual = function (actual, expected) {
 };
 
 // compare 2 arrays and return boolean
-const eqArrays = function (arrA, arrB) {
+const eqArrays = function(arrA, arrB) {
   if (arrA.length === arrB.length) {
     for (let i in arrA) {
       if (arrA[i] !== arrB[i]) {
@@ -27,7 +27,7 @@ const eqArrays = function (arrA, arrB) {
 
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
-const eqObjects = function (object1, object2) {
+const eqObjects = function(object1, object2) {
   if (Object.keys(object1).length === Object.keys(object2).length) {
     for (const key of Object.keys(object1)) {
       if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
