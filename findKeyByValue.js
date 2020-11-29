@@ -9,3 +9,19 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+const bestTVShowsByGenre = { 
+  sci_fi: "The Expanse",
+  comedy: "Brooklyn Nine-Nine",
+  drama:  "The Wire"
+};
+
+const findKeyByValue = function(object, value) {
+  for (const key of Object.keys(object)) {
+    if (object[key] === value) {
+      return key;
+    }
+  }
+}
+// console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama"); // Should return true
+assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined); // Should return true
