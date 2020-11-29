@@ -1,12 +1,4 @@
-const assertEqual = function(actual, expected) {
-  const pass = 0x2705;
-  const fail = 0x1F6D1;
-  if (actual === expected) {
-    console.log(`${String.fromCodePoint(pass)} Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`${String.fromCodePoint(fail)} Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+
 
 const eqArrays = function(arrA, arrB) {
   if (arrA.length === arrB.length) {
@@ -32,45 +24,22 @@ const assertArraysEqual = function(arrA, arrB) {
 };
 
 const without = function(source, itemToRem) {
-  /* Input = 2 arrays
-
-  Do nested for loop?
-  For loop from i = 0 to i < source.length
-    For loop from j = 0 to j < itemToRem.length
-      Check if itemToRem[j] match source[i]
-        Remove source[i] from source array
-      End if
-    End loop
-  End loop
-  Return source
-  */
   let leftOver = [];
   for (let i in source) {
     for (let j in itemToRem) {
       if (itemToRem[j] === source[i]) {
-        leftOver = source.filter(function(e) { // check with mentor
-        return e !== source[i];
+        leftOver = source.filter(function(e) {
+          return e !== source[i];
         });
       }
     }
   }
   console.log(leftOver);
-}
+};
 
-/*assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => should FAIL
-
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => should PASS
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), true); // => should FAIL
-assertEqual(eqArrays([], ["1", "2", 3]), true); // => should FAIL
-
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual([1, 2, "3"], [1, 2, 3]);
-assertArraysEqual([1, 2], [1, 2, 3]);*/
-
-without([1, 2, 3], [1]) // => [2, 3]
-without(["1", "2", "3"], [1, 2, "3"]) // => ["1", "2"]
-without([], [1])
+without([1, 2, 3], [1]); // => [2, 3]
+without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
+without([], [1]);
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]);
