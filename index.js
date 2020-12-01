@@ -14,17 +14,17 @@ const eqObjects = require('./eqObjects');
 
 
 module.exports = {
-  head: head,
-  tail: tail,
-  middle: middle,
-  map: map,
-  takeUntil: takeUntil,
-  without: without,
-  findKey: findKey,
-  findKeyByValue: findKeyByValue,
-  letterPositions: letterPositions,
-  countLetters: countLetters,
-  countOnly: countOnly,
-  eqArrays: eqArrays,
-  eqObjects: eqObjects
+  head,
+  tail,
+  middle,
+  map,
+  takeUntil,
+  without,
+  findKey,
+  findKeyByValue,
+  letterPositions,
+  countLetters,
+  countOnly,
+  eqArrays,
+  eqObjects
 };
