@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@amphakarn/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "lotide project which is part of the learning web programming at Lighthouse Labs",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/Amphakarn/lotide.git"
   },
-  "author": "",
+  "author": "Amphakarn Pisuthigomol",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Amphakarn/lotide/issues"
